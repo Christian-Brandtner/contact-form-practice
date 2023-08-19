@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+// :root {
+//     overflow: hidden;
+// }
+
+
+@mixin add-flex($direction) {
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    justify-items: center;
+
+    flex-direction: $direction;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-line($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: flex-start;
+}
+
+@mixin grid-hor {
+    display: grid;
+    grid-template-columns: 50px auto;
+    
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: normal;
+    background: #232329;
+    color: #666666;
+
+}
+
+h1 {
+    @include add-flex(column);
+    color: #a0a0a0;
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.title {
+    padding-top: 7em;
+    margin-bottom: 3.5rem;
+    color: #000;
+}
+
+
+
+.content {
+    margin: 0 auto;
+    max-width: 1140px;
+    @include add-flex(column);
+    min-height: 3rem;
+    max-height: 590px;
+
+    .form-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        border-radius: 10px;
+        color: #93959A;
+        width: 920px;
+        
+
+        .form-1 {
+            background: #272A34;
+
+            h3 {
+                font-size: 1.75rem;
+                line-height: 1.5;
+                font-weight: 400;
+                color: #fff;
+                margin-bottom: 24px;
+            }
+
+            padding: 3rem;
+            border-radius: 10px 0 0 10px;
+
+            .form-field {
+                padding: 0;
+                display: block;
+                background-color: transparent;
+
+                input,
+                textarea {
+                    height: 52px;
+                    line-height: 1.5;
+                    font-size: 16px;
+                    font-weight: 400;
+                    max-width: 364px;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid;
+                    border-color: rgba(255, 255, 255, 0.2);
+                    outline: none;
+                    color: rgba(255, 255, 255, 0.8);
+                    background-color: transparent;
+                    transition: border-color 0.3s, color 0.3s;
+                    margin-bottom: 16px;
+
+                    &::placeholder {
+                        color: #ababab;
+                        font-family: "Poppins", Arial, sans-serif;
+                    }
+
+                    &:focus {
+                        border: none;
+                        border-bottom: 1px solid;
+                        border-color: #ffffffaa;
+                        color: rgba(255, 255, 255, 0.3);
+                    }
+                }
+
+                .message {
+                    height: 145px;
+                    margin-bottom: 10px;
+                }
+
+                .submit {
+
+                    display: inline-block;
+                    width: auto;
+                    border: none;
+                    padding: 12px 16px;
+                    border-radius: 2px;
+
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-align: center;
+                    color: #fff;
+
+                    background: #f39422;
+                    border-color: #f39422;
+
+                    transition: background-color, 0.3s;
+
+                    &:hover {
+                        background-color: #d67a0c;
+                    }
+                }
+            }
+        }
+
+        .form-2 {
+            background: #1C1E25;
+
+            padding: 3rem;
+            border-left: none;
+            border-radius: 0px 10px 10px 0px;
+
+            justify-content: center;
+
+            .message {
+                margin-bottom: 1.5rem;
+            }
+            .contact {
+                @include grid-hor();
+                margin-bottom: 25px;
+                align-items: center;
+                p {
+                    padding-left: 1rem;
+                    font-size: 16px;
+                    line-height: 1.8;
+                    font-weight: normal;
+                }
+            }
+
+            .icon {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                height: 50px;
+                min-width: 50px;
+
+                background-color: rgba(255, 255, 255, 0.02);
+                border-radius: 360px;
+
+                color: white;
+
+                .fa {
+                    font-size: 20px;
+                }
+            }
+
+            h3 {
+                color: white;
+                font-size: 18px;
+                font-weight: 400;
+                color: white;
+                line-height: 1.5;
+
+                max-height: 27px;
+
+                margin-bottom: 0.5rem;
+            }
+            .p-container {
+                display: grid;
+                align-items: center;
+                
+            }
+
+            p {
+                color: #666666;
+                .highlight {
+                    color: white;
+                }
+            }
+
+        }
+    }
+}
